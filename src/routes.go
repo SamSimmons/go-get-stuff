@@ -2,38 +2,34 @@ package main
 
 import "net/http"
 
+// Route some comment here?
 type Route struct {
-  Name string
-  Method string
-  Pattern string
-  HandlerFunc http.HandlerFunc
+	Name        string
+	Method      string
+	Pattern     string
+	HandlerFunc http.HandlerFunc
 }
 
+// Routes something
 type Routes []Route
 
 var routes = Routes{
-  Route{
-    "Index",
-    "GET",
-    "/",
-    Index,
-  },
-  Route{
-    "TodoIndex",
-    "GET",
-    "/todos",
-    TodoIndex,
-  },
-  Route{
-    "TodoShow",
-    "GET",
-    "/todos/{todoId}",
-    TodoShow,
-  },
-  Route{
-    "TodoCreate",
-    "POST",
-    "/todos",
-    TodoCreate,
-  },
+	Route{
+		"Index",
+		"GET",
+		"/",
+		Index,
+	},
+	Route{
+		"MatchInfo",
+		"GET",
+		"/match/{id}",
+		MatchInfo,
+	},
+	Route{
+		"MatchStats",
+		"GET",
+		"/match/{id}/stats",
+		MatchStats,
+	},
 }
