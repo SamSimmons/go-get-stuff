@@ -38,4 +38,10 @@ var routes = Routes{
 		"/match/{id}/info",
 		ExtraInfo,
 	},
+	Route{
+		"Overs",
+		"GET",
+		"/match/{id}/overs",
+		Overs,
+	},
 }
