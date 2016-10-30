@@ -50,3 +50,18 @@ func MatchStats(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 }
+
+func ExtraInfo(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.WriteHeader(http.StatusOK)
+
+	dat, err := ioutil.ReadFile("./public/439322/match-info.json")
+	if err != nil {
+		panic(err)
+	}
+
+	if err := json.NewEncoder(w).Encode(string(dat)); err != nil {
+		panic(err)
+	}
+}

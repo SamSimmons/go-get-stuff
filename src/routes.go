@@ -32,4 +32,10 @@ var routes = Routes{
 		"/match/{id}/stats",
 		MatchStats,
 	},
+	Route{
+		"ExtraInfo",
+		"GET",
+		"/match/{id}/info",
+		ExtraInfo,
+	},
 }
